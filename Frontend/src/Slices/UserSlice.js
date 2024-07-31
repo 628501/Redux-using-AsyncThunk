@@ -63,19 +63,7 @@ export const userDelete = createAsyncThunk(
 export const UserSlice = createSlice({
   name: "users",
   initialState,
-  reducers: {
-    deleteUser: (state, action) => {
-      const id = action.payload;
-      state.users = state.users.filter((user) => user.id !== id);
-    },
-    updateUser: (state, action) => {
-      const { id, name, age, email, contact } = action.payload;
-      const index = state.users.findIndex((user) => user.id === id);
-      if (index !== -1) {
-        state.users[index] = { id, name, age, email, contact };
-      }
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getUsers.pending, (state) => {
